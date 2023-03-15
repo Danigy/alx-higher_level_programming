@@ -1,5 +1,10 @@
 #!/usr/bin/python3
+
+
 def convert_roman(ch):
+    """
+    converts a roman numeral character into the respective integer
+    """
     ret = -1
     if ch == 'I':
         ret = 1
@@ -19,6 +24,9 @@ def convert_roman(ch):
 
 
 def roman_to_int(roman_string):
+    """
+    converts any string of roman numerals to decimal
+    """
     cur_max = -1
     cur = conv = 0
     holder = []
