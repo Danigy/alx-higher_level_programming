@@ -4,7 +4,7 @@
 #           Repository: alx-higher_level_programming
 #           Directory: 0x06-python-classes
 # -----------------------------------------------------------
-"""Square Class.
+"""
 This module contains a class that defines a square.
 Usage Example:
     Square = __import__('1-square').Square
@@ -13,16 +13,15 @@ Usage Example:
     print(my_square.__dict__)
 """
 
+"""Define a class Square."""
+
+
 class Square:
-    """Defines the blueprint of a square.
-    Attribute:
-        __size: A private integer indicating the size of the square object.
-    """
+    """Represent a square."""
 
     def __init__(self, size):
-        """An object constructor method.
-        Initializes Square with size.
-        Arg:
-            size: An integer representing object size of the square object.
+        """Initialize a new Square.
+        Args:
+            size (int): The size of the new square.
         """
         self.__size = size
