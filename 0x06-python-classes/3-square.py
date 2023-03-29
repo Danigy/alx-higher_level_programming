@@ -1,21 +1,45 @@
 #!/usr/bin/python3
+# -----------------------------------------------------------
+# (C) 2023  Alx-Software Engineering Class, batch 11
+#           Repository: alx-higher_level_programming
+#           Directory: 0x06-python-classes
+# -----------------------------------------------------------
+"""Square Class.
+This module contains a class that defines a square.
+Usage Example:
+    Square = __import__('3-square').Square
+    my_square = Square(3)
+    print(type(my_square))
+    print(my_square.__dict__)
+"""
 
-"""Define a class Square"""
 
 class Square:
-    """Represent a square"""
+    """Defines the blueprint of a square.
+    Attribute:
+        size: An integer indicating the size of the square object.
+    """
 
     def __init__(self, size=0):
-        """Initialize a new square
-        Args:
-            size (int): The size of the new square
+        """An object constructor method.
+        Initiatilizes Square with size.
+        Arg:
+            size: A integer representing object size.
+                  Has a default value of 0.
+
+        Raises:
+            TypeError: if size is not an integer.
+            ValueError: If size < 0.
         """
         if not isinstance(size, int):
             raise TypeError("size must be an integer")
-        elif size < 0:
+        if size < 0:
             raise ValueError("size must be >= 0")
         self.__size = size
 
     def area(self):
-        """Return the current area of the square"""
+        """A public object method.
+        Returns:
+            The current square area
+        """
         return (self.__size * self.__size)
