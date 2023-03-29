@@ -16,13 +16,13 @@ Usage Example:
 class Square:
     """Defines the blueprint of a square.
     Attribute:
-        size: An integer indicating the size of the square object.
+        __size: A private integer indicating the size of the square object.
     """
 
     def __init__(self, size):
         """An object constructor method.
-        Initiatilizes Square with size.
+        Initializes Square with size.
         Arg:
-            size: A integer representing object size
+            size: An integer representing object size of the square object.
         """
         self.__size = size

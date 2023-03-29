@@ -1,7 +1,8 @@
 #!/usr/bin/python3
 # -----------------------------------------------------------
-# (C) 2023 repository: alx-higher_level_programming
-#          Directory: 0x06-python-classes
+# (C) 2023  Alx-Software Engineering Class, batch 11
+#           Repository: alx-higher_level_programming
+#           Directory: 0x06-python-classes
 # -----------------------------------------------------------
 """Square Class.
 This module contains an empty class that defines a square.
