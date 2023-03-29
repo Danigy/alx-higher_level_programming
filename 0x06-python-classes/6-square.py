@@ -22,17 +22,18 @@ class Square:
     """
 
     def __init__(self, size=0, position=(0, 0)):
-        """An object constructor method."""
-        self.__size = size
-        self.__position = position
+        """Initialize a new square
+        Args:
+            size (int): The size of the new square.
+            position (tuple): The position of the new square
+        """
+        self.size = size
+        self.position = position
 
     @property
     def size(self):
-        """Gets the size private attribute value.
-        Returns:
-            The size private attribute
-        """
-        return (self.__size)
+        """Get/set the current size of the square"""
+        return self.__size
 
     @size.setter
     def size(self, value):
@@ -43,49 +44,39 @@ class Square:
         """
         if not isinstance(value, int):
             raise TypeError("size must be an integer")
-        if value < 0:
+        elif value < 0:
             raise ValueError("size must be >= 0")
         self.__size = value
 
     @property
     def position(self):
-        """Gets the position private attribute value.
-        Returns:
-            The position private attribute
-        """
+        """Get/set the current position of the square"""
         return (self.__position)
 
     @position.setter
     def position(self, value):
-        """Sets the position private attribute value.
-        Validates the assignment of the position private attribute.
-        Arg:
-            value: the value to be set
-        """
-        if (
-            not isinstance(value, tuple)
-            or len(value) != 2
-            or not all(isinstance(num, int) for num in value)
-            or not all(num >= 0 for num in value)
-        ):
+        if (not isinstance(value, tuple) or
+                len(value) != 2 or
+                not all(isinstance(num, int) for num in value) or
+                not all(num >= 0 for num in value)):
             raise TypeError("position must be a tuple of 2 positive integers")
         self.__position = value
 
     def area(self):
-        """A public object method.
-        Returns:
-            The current square area
+        """Sets the position private attribute value.
+        Validates the assignment of the position private attribute.
+        Arg:
+            value: the value to be set
         """
         return (self.__size * self.__size)
 
     def my_print(self):
         """Displays the square object with # character"""
         if self.__size == 0:
-            print("")
+            print()
             return
 
-        [print("") for i in range(0, self.__position[1])]
-        for i in range(0, self.__size):
-            [print(" ", end="") for j in range(0, self.__position[0])]
-            [print("#", end="") for k in range(0, self.__size)]
-            print("")
+        print("\n" * self.__position[1], end="")
+        for i in range(self.__size):
+            print(" " * self.__position[0], end="")
+            print("#" * self.__size)
