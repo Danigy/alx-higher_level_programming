@@ -1,67 +1,74 @@
-#!/usr/bin/python3
+"""Square Class.
+This module contains a class that defines a square.
+Usage Example:
+    Square = __import__('102-square').Square
+    s_5 = Square(5)
+    s_6 = Square(6)
+    if s_5 < s_6:
+        print("Square 5 < Square 6")
+    if s_5 <= s_6:
+        print("Square 5 <= Square 6")
+"""
+
 
 class Square:
-    """
-    A class that represents a square.
-
-    Attributes:
-        __size (int or float): The size of the square.
+    """Defines the blueprint of a square.
+    Attribute:
+        size (int): An integer representing the object size.
     """
 
     def __init__(self, size=0):
-        """Initializes a new Square instance with the given size."""
-        self.size = size
+        """An object constructor method."""
+        self.__size = size
 
     @property
     def size(self):
-        """Getter for the size attribute."""
+        """Gets the size private attribute value.
+        Returns:
+            The size private attribute
+        """
         return self.__size
 
     @size.setter
     def size(self, value):
-        """Setter for the size attribute."""
-        if not isinstance(value, (int, float)):
-            raise TypeError("size must be a number")
+        """Sets the size private attribute value.
+        Validates the assignment of the size private attribute.
+        Arg:
+            value: the value to be set
+        """
+        if not isinstance(value, int):
+            raise TypeError("size must be an integer")
         if value < 0:
             raise ValueError("size must be >= 0")
         self.__size = value
 
     def area(self):
-        """Returns the area of the square."""
-        return self.size ** 2
+        """A public object method.
+        Returns:
+            The current square area
+        """
+        return self.__size**2
 
-    def __eq__(self, other):
-        """Returns True if the area of this square is equal to the area of the other square."""
-        if isinstance(other, Square):
-            return self.size == other.size
-        return NotImplemented
+    def __eq__(self, o):
+        """Defines the == comparison"""
+        return self.__size == o.__size
 
-    def __ne__(self, other):
-        """Returns True if the area of this square is not equal to the area of the other square."""
-        if isinstance(other, Square):
-            return self.size != other.size
-        return NotImplemented
+    def __ne__(self, o):
+        """Defines the != comparison"""
+        return self.__size != o.__size
 
-    def __lt__(self, other):
-        """Returns True if the area of this square is less than the area of the other square."""
-        if isinstance(other, Square):
-            return self.size < other.size
-        return NotImplemented
+    def __gt__(self, o):
+        """Defined the > comparison"""
+        return self.__size > o.__size
 
-    def __le__(self, other):
-        """Returns True if the area of this square is less than or equal to the area of the other square."""
-        if isinstance(other, Square):
-            return self.size <= other.size
-        return NotImplemented
+    def __ge__(self, o):
+        """Defined the >= comparison"""
+        return self.__size >= o.__size
 
-    def __gt__(self, other):
-        """Returns True if the area of this square is greater than the area of the other square."""
-        if isinstance(other, Square):
-            return self.size > other.size
-        return NotImplemented
+    def __lt__(self, o):
+        """Defined the < comparison"""
+        return self.__size < o.__size
 
-    def __ge__(self, other):
-        """Returns True if the area of this square is greater than or equal to the area of the other square."""
-        if isinstance(other, Square):
-            return self.size >= other.size
-        return NotImplemented
+    def __le__(self, o):
+        """Defined the <= comparison"""
+        return self.__size <= o.__size
